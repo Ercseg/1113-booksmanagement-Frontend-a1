@@ -13,6 +13,9 @@ export default {
         author: "",
         year: 2000,
       },
+      selectedBook:{
+
+      }
     };
   },
   methods: {
@@ -85,6 +88,9 @@ export default {
         Könyv hozzáadása
       </button>
     </form>
+
+
+
     <table class="">
       <thead class="">
         <tr class="">

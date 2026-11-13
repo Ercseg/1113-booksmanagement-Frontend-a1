@@ -5,5 +5,15 @@ const getBooks = async () => {
     return response.json();
 };
 
+const createBook = async (book) => {
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json",
 
-export {getBooks};
+         },
+         body: JSON.stringify(book),
+    })
+    return response.json();
+}
+
+export {getBooks, createBook};

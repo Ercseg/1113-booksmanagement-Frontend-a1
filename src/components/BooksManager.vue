@@ -1,5 +1,5 @@
 <script setup>
-import { getBooks, createBook } from "../api/books.js";
+import { getBooks, createBook, deleteBook } from "../api/books.js";
 </script>
 
 <script>
@@ -25,6 +25,10 @@ export default {
     },
     async submitCreateBook(){
       await this.addBook(this.newBook);
+    },
+    async removebook(bookId){
+      await deleteBook(bookId);
+      await this.loadBooks();
     }
   },
   mounted() {
@@ -98,7 +102,7 @@ export default {
           <td class="">{{ book.title }}</td>
           <td class="">{{ book.author }}</td>
           <td class="">{{ book.year }}</td>
-          <td class="">-</td>
+          <td class="" > <button class="border-2 border-rose-500 text-rose-500 rounded-lg px-3 py-1 mt-4 cursor-pointer" type = "button" @click="removebook(book.id)">Törlés</button></td>
         </tr>
       </tbody>
     </table>
